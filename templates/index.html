@@ -1,0 +1,40 @@
+{% extends 'baseRequired.html' %}
+<!-- Setoffset block -->
+{% block bodyContent %}
+<!-- Your HTML Code -->
+<style>
+   .setmaxcustom{
+      max-height: 200px;
+   }
+</style>
+
+<div class="custom-container mx-auto my-5">
+   <h3 class="text-center"> All Products</h3>
+   <div class="col row">
+      {% for item in allpro %}
+      <div class="col-lg-3 col-md-4 mt-3">
+         <div class="card shadow p-2 h-100">
+            <img class="setmaxcustom" src="/media/{{ item.productImage }}"  alt="img">
+            <hr>
+            <!-- <p class="h6">{{ item.sellername_id }} </p> -->
+            <!-- <p class="h6">Product Name: {{ item.productImage }} </p> -->
+            <p class="h6 mt-2"><b>Product Name:</b> {{ item.productName }} </p>
+            <p class="h6 mt-2"><b>Product Price:</b> ₹{{ item.productPrice }} </p>
+            <p class="h6 mt-2"><b>Product Description:</b> {{ item.productDesc }} </p>
+         </div>
+      </div>
+      <!-- <p class="h1">{{ item.productName }} </p> -->
+      {% endfor %}
+   </div>
+</div>
+
+<!-- IMG_FLUID -->
+<section class="mx-auto full-img text-center">
+   <img src="https://www.epsprogramming.com/blog-posts/img/programming-banner.jpg
+      " alt="" class="img-fluid" width="100%">
+</section>
+<!-- IMG_FLUID -->
+{% comment %} {% include 'registrationForm.html' %} {% endcomment %}
+
+{% endblock bodyContent %}
+<!-- Setoffset block -->

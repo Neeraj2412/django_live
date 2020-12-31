@@ -1,0 +1,216 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerbGross.com</title>
+    {% comment %}
+    <!-- Bootstrap CSS --> {% endcomment %}
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'maincss/mainProj.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <!-- FA ICON CDN  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom script and link -->
+    <!-- Custom JS -->
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navContainer navbars" id="newnav">
+        <div class="brandContainer">
+            <img class="brandImg" src="https://f.hubspotusercontent00.net/hubfs/6706555/Selfhosting/azure.svg" alt="">
+            <!-- <span class="brandName">skuller</span> -->
+        </div>
+        <ul class="menusContainer">
+            <li class="menu">
+                <a href="#" class="nav-alinks">Your Orders</a>
+            </li>
+            <li class="menu">
+                <a href="#" class="nav-alinks">Cart</a>
+            </li>
+            <li class="menu loginContainer">
+                <div class="logins">
+                    <a href="{% url 'logout' %}" class="nav-alinks">Hello, {{ user.first_name }}  Logout</a>
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="hamburgerContainer " id="hamburger">
+            <span class="stroke stroke1">1</span>
+            <span class="stroke stroke2">2</span>
+            <span class="stroke stroke3">3</span>
+        </div>
+    </nav>
+    <!-- NAVBAR -->
+
+    <!-- Main Body -->
+    <div class="setoffset">
+        {% block bodyContent %} {% endblock bodyContent %}
+    </div>
+    <!-- Main Body -->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark mt-5">
+
+        <div style=" background-color: #6351ce;">
+            <div class="col-11 mx-auto">
+
+                <!-- Grid row-->
+                <div class="container-fluid row py-4 d-flex align-items-center">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h5 class="mb-0" style="color: #fff;">Get connected with us on social networks!</h5>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+                            <i class="fa fa-facebook-f white-text mr-4"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic">
+                            <i class="fa fa-twitter white-text mr-4"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic">
+                            <i class="fa fa-google-plus white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic">
+                            <i class="fa fa-linkedin white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fa fa-instagram white-text"> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="custom-container mx-auto text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">CD Developers</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                        consectetur
+                        adipisicing elit.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Products</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">C++</a>
+                    </p>
+                    <p>
+                        <a href="#!">Python</a>
+                    </p>
+                    <p>
+                        <a href="#!">Java</a>
+                    </p>
+                    <p>
+                        <a href="#!">Ruby</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">Your Account</a>
+                    </p>
+                    <p>
+                        <a href="#!">Become an Affiliate</a>
+                    </p>
+                    <p>
+                        <a href="#!">Shipping Rates</a>
+                    </p>
+                    <p>
+                        <a href="#!">Help</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> Mumbai, 401203, India</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> neerajrana2412@gmail.com</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> + 91 76 66 69 87 84</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i> + 91 76 66 69 87 84</p>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="#"> Neeraj Rana</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'mainjs/mainProj.js' %}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+        integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

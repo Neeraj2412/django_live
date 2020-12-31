@@ -1,0 +1,1 @@
+web:gunicorn herbMain.wsgi --log-file -

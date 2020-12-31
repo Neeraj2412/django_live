@@ -1,0 +1,59 @@
+<section class="mx-auto custom-container p-2" id="registrationform">
+    <hr>
+    <div class="col-12 mx-auto my-5">
+        <div class="row">
+            <div class="col-lg-6 col-11 mx-auto px-3 p-md-0 mt-4 mt-lg-0 order-lg-2 order-2">
+                <h1 class="head-h1-text" style="font-weight: 400;">Hinduja Computer Applications Program
+                </h1>
+                <!-- <hr class="hrhover"> -->
+                <h5 class="mt-3 head-p-text">Design Develop And Create New Systems &amp; Architecture For The Better
+                    World</h5>
+                <ul class="mt-2"
+                    style="list-style-image:url(https://f.hubspotusercontent00.net/hubfs/6706555/ACP/spot-li-01.jpg);padding-left: 20px;font-size: 18px;">
+                    <li class="mt-2">A Grade Certify College</li>
+                    <li class="mt-2">Highly Experienced Faulty</li>
+                    <li class="mt-2">Research Program</li>
+                    <li class="mt-2">Corporate Training</li>
+                    <li class="mt-2">Campus Placements</li>
+                </ul>
+            </div>
+            <div class="col-lg-5 col-11 mx-auto shadow px-3" style="border-radius: 5px;">
+                <h4 class="my-3 text-center">Register To Get Your Journey Started</h4>
+                <!-- form -->
+                <div class="formsec">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="row mt-4">
+                                <div class="col-md-6">{{ form.username }}</div>
+                                <div class="col-md-6">{{ form.full_name }}</div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-6">{{ form.email }}</div>
+                                <div class="col-md-6">{{ form.phone }}</div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-6">{{ form.password1 }}</div>
+                                <div class="col-md-6">{{ form.password2 }}</div>
+                            </div>
+                            <div class="">
+                                <div class="mt-3"><input class="form-control" type="text" placeholder="Address">
+                                </div>
+                            </div>
+                            <div class="col text-center mt-3">
+                                <button class="btn btn-primary px-5 py-1">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- form -->
+                <div class="col text-center mt-3">
+                    <h6>By clicking "Register" I agree to <a href="#">Terms of Service</a>
+                        &amp;
+                        <a href="#">Hinduja Privacy Policy</a></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>

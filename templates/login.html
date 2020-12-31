@@ -1,0 +1,236 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerbGross.com</title>
+    {% comment %}
+    <!-- Bootstrap CSS --> {% endcomment %}
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'maincss/mainProj.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- FA ICON CDN  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom script and link -->
+    <!-- Custom JS -->
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <style>
+        .register {
+            background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+            padding: 3%;
+            overflow: hidden;
+            padding-right: 0%;
+        }
+
+        .register-left {
+            text-align: center;
+            color: #fff;
+            margin-top: 4%;
+        }
+
+        .register-left input {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 2%;
+            width: 60%;
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #383d41;
+            margin-top: 30%;
+            margin-bottom: 3%;
+            cursor: pointer;
+        }
+
+        .register-right {
+            background: #f8f9fa;
+            border-top-left-radius: 10% 50%;
+            border-bottom-left-radius: 10% 50%;
+        }
+
+        .register-left img {
+            margin-top: 15%;
+            margin-bottom: 5%;
+            width: 25%;
+            -webkit-animation: mover 2s infinite alternate;
+            animation: mover 1s infinite alternate;
+        }
+
+        @-webkit-keyframes mover {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes mover {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .register-left p {
+            font-weight: lighter;
+            padding: 12%;
+            margin-top: -9%;
+        }
+
+        .register .register-form {
+            padding: 40px;
+            margin-top: 13%;
+        }
+
+        .btnRegister {
+            border: none;
+            border-radius: 1.5rem;
+            background: #0062cc;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .register .nav-tabs {
+            margin-top: 3%;
+            border: none;
+            background: #0062cc;
+            border-radius: 1.5rem;
+            width: 28%;
+            float: right;
+        }
+
+        .register .nav-tabs .nav-link {
+            padding: 2%;
+            height: 34px;
+            font-weight: 600;
+            color: #fff;
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+        }
+
+        .register .nav-tabs .nav-link:hover {
+            border: none;
+        }
+
+        .register .nav-tabs .nav-link.active {
+            color: #000 !important;
+            border: 2px solid #0062cc;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 1.5rem;
+        }
+
+        .register-heading {
+            text-align: center;
+            margin-top: 8%;
+            margin-bottom: -15%;
+            color: #495057;
+        }
+    </style>
+    <div class="container-fluid mx-auto register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                <h3>Welcome</h3>
+                <p>To HerbGross.com, here you can get any kind of nursery items</p>
+                <a href="{% url 'signup' %}" value="Login">SignUp</a><br />
+                <!-- <input type="submit" name="" value="Login" /> -->
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#customer" role="tab"
+                            aria-controls="home" aria-selected="true">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#seller" role="tab"
+                            aria-controls="profile" aria-selected="false">Seller</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="customer" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Authenticate as a Customer</h3>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group mt-3">
+                                        <input name="username" id="" class="form-control" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mt-3">
+                                        <input name="password" id="" type="password" class="form-control"
+                                            placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="col text-center" style="display: inline-block;">
+                                    {% for message in messages %}
+                                    <p class="alert text-success">{{ message }}</p>
+                                    {% endfor %}
+                                </div>
+                                <input type="submit" class="btnRegister py-2 px-5 text-center" value="LogIn" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade show" id="seller" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3 class="register-heading">Authenticate as a Seller</h3>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group mt-3">
+                                        <input name="usernameSeller" id="" class="form-control" placeholder="Username">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mt-3">
+                                        <input name="passwordSeller" id="" type="password" class="form-control"
+                                            placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="col text-center" style="display: inline-block;">
+                                    {% for message in messages %}
+                                    <p class="alert text-success">{{ message }}</p>
+                                    {% endfor %}
+                                </div>
+                                <input type="submit" class="btnRegister py-2 px-5 text-center" value="LogIn" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'mainjs/mainProj.js' %}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+        integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

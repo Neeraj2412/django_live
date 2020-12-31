@@ -1,0 +1,119 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerbGross.com</title>
+    {% comment %}
+    <!-- Bootstrap CSS --> {% endcomment %}
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'maincss/mainProj.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- FA ICON CDN  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom script and link -->
+    <!-- Custom JS -->
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navContainer navbars" id="newnav">
+        <div class="brandContainer">
+            <img class="brandImg" src="https://f.hubspotusercontent00.net/hubfs/6706555/Selfhosting/azure.svg" alt="">
+            <!-- <span class="brandName">skuller</span> -->
+        </div>
+        <ul class="menusContainer">
+            <li class="menu">
+                <a href="#" class="nav-alinks">Order Gained</a>
+            </li>
+            <li class="menu loginContainer">
+                <div class="logins">
+                    <a href="{% url 'logout' %}" class="nav-alinks">Hello, {{ user.first_name }} Logout</a>
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="hamburgerContainer " id="hamburger">
+            <span class="stroke stroke1">1</span>
+            <span class="stroke stroke2">2</span>
+            <span class="stroke stroke3">3</span>
+        </div>
+    </nav>
+    <!-- NAVBAR -->
+
+
+    <style>
+        .setmaxcustom {
+            max-height: 200px;
+        }
+    </style>
+    <div class="setoffset">
+        <div class="custom-container row mx-auto">
+            <div class="col-md-4 card shadow p-3 mt-5">
+                <h5 class="text-center">Add Products</h5>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row register-form">
+                        <div class="col">
+                            <div class="form-group mt-3">
+                                {{ form.productName }}
+                            </div>
+                            <div class="form-group mt-3">
+                                {{ form.productImage }}
+                            </div>
+                            <div class="form-group mt-3">
+                                {{ form.productPrice }}
+                            </div>
+                            <div class="form-group mt-3">
+                                {{ form.productDesc }}
+                            </div>
+                            <div class="form-group mt-3">
+                                <input class="btn btn-primary px-5 py-1" type="submit">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8 card shadow p-3 mt-5">
+                <img class="img-fluid" src="" alt="">
+            </div>
+        </div>
+        <div class="custom-container row mx-auto">
+            <h1 class="text-primary text-center my-3">My Products</h1>
+            {% for item in pro %}
+            <div class="col-lg-3 col-md-4 mt-3">
+                <div class=" card shadow p-2 h-100">
+                    <img class="setmaxcustom" src="/media/{{ item.productImage }}" alt="">
+                    <!-- <p class="h6">{{ item.productImage }} </p> -->
+                    <hr>
+                    <p class="h6 mt-2"><b>Product Name: </b>{{ item.productName }} </p>
+                    <p class="h6 mt-2"><b>Product Price: </b>₹{{ item.productPrice }} </p>
+                    <p class="h6 mt-2"><b>Product Description: </b>{{ item.productDesc }} </p>
+                </div>
+            </div>
+            <!-- <p class="h1">{{ item.productName }} </p> -->
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'mainjs/mainProj.js' %}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+        integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
