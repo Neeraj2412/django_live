@@ -10,4 +10,4 @@ Good Greetings to you all, In this readme I will be explaning my django project
   
 3. forms.py & views.py - The forms.py consist of custom forms which are modified as pe the need's, and the views.py for the all proccess.
 4. admin.py - admin.py is added with all the models.
-5 The site is hosted on pythonanywhere.com - Anyone can acces the site through https://github.com/Neeraj2412/django_live
+5 The site is hosted on pythonanywhere.com - Anyone can acces the site through http://neerajrana.pythonanywhere.com/
